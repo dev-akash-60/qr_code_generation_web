@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    position: relative;
+    margin: 300px auto 0;
+    width: 500px;
+    height: 250px;
+    background: linear-gradient(0deg, #193d81, #272727);
+    text-align: center;
+    background-color: rgba(70, 130, 190, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5)
+  }
+  /* Neon text style */
+h1 {
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation: neonGlow 2s ease-in-out infinite alternate, colorShift 6s ease-in-out infinite;
+}
+
+/* Neon glowing animation */
+@keyframes neonGlow {
+    0% {
+        text-shadow: 
+            0 0 5px rgba(255, 0, 0, 0.6),
+            0 0 10px rgba(255, 0, 0, 0.8),
+            0 0 15px rgba(21, 66, 108, 0.8),
+            0 0 20px rgba(27, 137, 55, 0.8),
+            0 0 25px rgba(203, 218, 89, 0.8);
+    }
+    100% {
+        text-shadow: 
+            0 0 10px rgb(199, 27, 27),
+            0 0 20px rgb(34, 57, 156),
+            0 0 30px rgb(11, 186, 23),
+            0 0 40px rgba(255, 0, 255, 1),
+            0 0 50px rgba(0, 255, 255, 1);
+    }
+}
+
+/* Color shifting animation */
+@keyframes colorShift {
+    0% { color: rgba(255, 255, 255, 0.8); }
+    25% { color: rgba(255, 0, 0, 0.9); }
+    50% { color: rgba(0, 255, 255, 0.9); }
+    75% { color: rgba(255, 255, 0, 0.9); }
+    100% { color: rgba(255, 105, 180, 0.9); }
+}
+
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(40, 137, 131, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+button {
+    background-color: rgba(0, 255, 255, 0.8);
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+button:hover {
+    background: #237894;
+    -webkit-text-fill-color: cadetblue;
+    color: transparent;
+
+}
+  .block:before, .block:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+      #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+  }
+  .label{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: brown;
+  }
+  
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .block:after {
+    filter: blur(50px);
+  }
+  .back-video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+@media (min-aspect-ratio: 16/9){
+    .back-video{
+        width: 100%;
+        height: auto;
+
+
+    }
+}
